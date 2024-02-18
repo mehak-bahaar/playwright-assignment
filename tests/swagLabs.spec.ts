@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import exp from 'constants';
 
-test('test login', async ({ page }) => {
+test('ecomerse website test', async ({ page }) => {
     //going to the link
   await page.goto('https://www.saucedemo.com/v1/');
   await page.pause()
@@ -23,7 +23,7 @@ test('test login', async ({ page }) => {
   //add to cart
   await page.locator('#inventory_container > div > div:nth-child(1) > div.pricebar > button').click();
   // checking chart
-  await page.locator('#shopping_cart_container').click();
+  await page.locator(".svg-inline--fa > path:nth-child(1)").click();
   await expect(page.url()).toBe('https://www.saucedemo.com/v1/cart.html')
     if(await page.$('[class="cart_item"]')){
         await await page.locator('//a[text()="CHECKOUT"]').click();
